@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main()=> runApp(MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
@@ -14,13 +14,12 @@ class MyApp extends StatelessWidget {
 class MyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         title: Text('SnackBar'),
         centerTitle: true,
       ),
-      body:MySnackBar(),
+      body: MySnackBar(),
     );
   }
 }
@@ -29,14 +28,23 @@ class MySnackBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child:RaisedButton(
+      child: RaisedButton(
         child: Text('Show me'),
-        onPressed: (){
+        onPressed: () {
           print(context);
-          Scaffold.of(context).showSnackBar(SnackBar(content:Text('hello')));
+          Scaffold.of(context).showSnackBar(SnackBar(
+              content: Text('hello',
+              textAlign: TextAlign.center,
+                style:TextStyle(
+                  color:Colors.white
+                ) ,
+              ),
+            backgroundColor: Colors.yellow,
+            duration: Duration(milliseconds: 1000),
+
+          ));
         },
       ),
-
     );
   }
 }
