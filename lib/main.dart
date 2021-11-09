@@ -25,7 +25,10 @@ class MyPage extends StatelessWidget {
           onPressed: (){
             flutterToast();
           },
-          child: Text('toast'),
+          child: Text('toast',
+          style: TextStyle(
+            color: Colors.white,
+          ),),
           color:Colors.blue,
         ),
       )  , // MySnackBar(),
